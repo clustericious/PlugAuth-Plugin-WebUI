@@ -12,6 +12,30 @@ with 'PlugAuth::Role::Welcome';
 # ABSTRACT: Embed a web user interface into your PlugAuth server
 # VERSION
 
+=head1 SYNOPSIS
+
+Your PlugAuth.conf
+
+ ---
+ url: http://localhost:3000
+ plugins:
+  - PlugAuth::Plugin::WebUI: {}
+
+Start L<PlugAuth>
+
+ % plugauth daemon
+
+and then navigate to the PlugAuth WebUI:
+
+ http://localhost:3000/ui
+
+=head1 DESCRIPTION
+
+This plugin embeds the L<PlugAuth WebUI|PlugAuth::WebUI> into your PlugAuth server,
+which can be accessed via the url C</ui>.
+
+=cut
+
 sub init
 {
   my($self) = @_;
