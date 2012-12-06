@@ -76,7 +76,6 @@ sub init
     {
       $c->res->headers->content_type($content_type);
       my $data = $file->slurp;
-      say STDERR "length = ", length $data;
       $c->render(data => $data);
     }
     else
