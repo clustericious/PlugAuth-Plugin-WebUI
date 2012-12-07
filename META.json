@@ -1,0 +1,54 @@
+{
+   "abstract" : "Embed a web user interface into your PlugAuth server",
+   "author" : [
+      "Graham Ollis <gollis@sesda3>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 4.300028, CPAN::Meta::Converter version 2.120921",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "PlugAuth-Plugin-WebUI",
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Module::Build" : "0.3601"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "6.30",
+            "Module::Build" : "0.3601"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "PlugAuth" : "0.04",
+            "PlugAuth::Role::Plugin" : "0",
+            "PlugAuth::Role::Welcome" : "0",
+            "PlugAuth::WebUI" : "0",
+            "Role::Tiny::With" : "0",
+            "perl" : "v5.10.0",
+            "strict" : "0",
+            "warnings" : "0"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "File::HomeDir" : "0",
+            "File::HomeDir::Test" : "0",
+            "Path::Class::Dir" : "0",
+            "Test::Mojo" : "0",
+            "Test::More" : "0",
+            "YAML" : "0"
+         }
+      }
+   },
+   "release_status" : "stable",
+   "version" : "0.01"
+}
+
