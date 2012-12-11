@@ -1,4 +1,7 @@
 Revision history for PlugAuth-Plugin-WebUI
 
+0.02      2012-12-11 14:06:40 America/New_York
+  - don't require credentials when SimpleAuth plugin not enabled
+
 0.01      2012-12-07 15:47:09 America/New_York
-- initial version
+  - initial version

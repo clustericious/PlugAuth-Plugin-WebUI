@@ -10,7 +10,7 @@ with 'PlugAuth::Role::Plugin';
 with 'PlugAuth::Role::Welcome';
 
 # ABSTRACT: Embed a web user interface into your PlugAuth server
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 
 
 sub init
@@ -27,6 +27,7 @@ sub init
   $app->routes->route('/ui')->name('plugauth_webui')->get(sub {
     my($c) = @_;
     $data->{plugauth_webui_data}->{api_url} = $c->url_for('index')->to_abs;
+    $data->{plugauth_webui_data}->{requires_authentic_credentials} = $app->config->simple_auth(default => '') ? 1 : 0;
     $c->stash($data);
     $c->render( template => 'plugauth_webui' );
   });
@@ -79,7 +80,7 @@ PlugAuth::Plugin::WebUI - Embed a web user interface into your PlugAuth server
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
