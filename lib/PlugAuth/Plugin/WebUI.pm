@@ -84,6 +84,38 @@ sub init
       $c->render_not_found;
     }
   });
+  
+  if($self->plugin_config->test(default => ''))
+  {
+    $app->routes->route('/t/:test')->name('plugauth_webui_test')->get(sub {
+      my($c) = @_;
+      my $test = $c->param('test');
+      my $file = $share_dir->file( 't', "$test.js" );
+      return $c->render_not_found unless -r $file;
+      
+      $data->{plugauth_webui_data}->{api_url} = $c->url_for('index')->to_abs;
+      $data->{plugauth_webui_data}->{requires_authentic_credentials} = $app->config->simple_auth(default => '') ? 1 : 0;
+      $c->stash($data);
+      
+      $c->stash->{test} = $test;
+      if($c->stash->{format} eq 'js')
+      {
+        $c->res->headers->content_type('application/x-javascript');
+        my $data = $file->slurp;
+        $c->render(data => $data);
+      }
+      else
+      {
+        $c->render( template => 'plugauth_webui_test' );
+      }
+    });
+    
+    $app->routes->route('/t')->name('plugauth_webui_test_list')->get(sub {
+      my($c) = @_;
+      $c->stash->{list} = [ grep { s/\.js$// } map { $_->basename } $share_dir->subdir('t')->children(no_hidden => 1) ];
+      $c->render( template => 'plugauth_webui_test_list' );
+    });
+  }
 }
 
 sub welcome

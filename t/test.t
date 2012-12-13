@@ -2,7 +2,7 @@ use strict;
 use warnings;
 use File::HomeDir::Test;
 use File::HomeDir;
-use Test::More tests => 4;
+use Test::More tests => 2;
 use Test::Mojo;
 use Path::Class::Dir;
 use YAML qw( DumpFile );
@@ -17,14 +17,11 @@ $etc->mkpath(0, 0700);
 
 DumpFile($etc->file('PlugAuth.conf')->stringify, {
   plugins => [
-    { 'PlugAuth::Plugin::WebUI' => {} },
+    { 'PlugAuth::Plugin::WebUI' => { test => 1} },
   ],
 });
 
 my $t = Test::Mojo->new("PlugAuth");
 
-$t->get_ok("/ui")
-  ->status_is(200);
-
 $t->get_ok("/t")
-  ->status_is(404);
+  ->status_is(200);
