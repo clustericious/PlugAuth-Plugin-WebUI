@@ -50,7 +50,7 @@ sub init
   $app->routes->route('/ui')->name('plugauth_webui')->get(sub {
     my($c) = @_;
     $data->{plugauth_webui_data}->{api_url} = $c->url_for('index')->to_abs;
-    $data->{plugauth_webui_data}->{requires_authentic_credentials} = $app->config->simple_auth(default => '') ? 1 : 0;
+    $data->{plugauth_webui_data}->{requires_authentic_credentials} = ($app->config->simple_auth(default => '') || $app->config->plug_auth(default => '')) ? 1 : 0;
     $c->stash($data);
     $c->render( template => 'plugauth_webui' );
   });
@@ -94,7 +94,7 @@ sub init
       return $c->render_not_found unless -r $file;
       
       $data->{plugauth_webui_data}->{api_url} = $c->url_for('index')->to_abs;
-      $data->{plugauth_webui_data}->{requires_authentic_credentials} = $app->config->simple_auth(default => '') ? 1 : 0;
+      $data->{plugauth_webui_data}->{requires_authentic_credentials} = ($app->config->simple_auth(default => '') || $app->config->plug_auth(default => '')) ? 1 : 0;
       $c->stash($data);
       
       $c->stash->{test} = $test;
