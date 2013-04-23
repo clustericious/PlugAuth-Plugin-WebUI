@@ -1,4 +1,3 @@
-Build.PL
 Changes
 LICENSE
 MANIFEST
@@ -9,4 +8,5 @@ README
 dist.ini
 lib/PlugAuth/Plugin/WebUI.pm
 t/basic.t
+t/test.t
 t/use.t

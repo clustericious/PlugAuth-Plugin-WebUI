@@ -14,15 +14,13 @@ my %WriteMakefileArgs = (
   "BUILD_REQUIRES" => {
     "File::HomeDir" => 0,
     "File::HomeDir::Test" => 0,
-    "Module::Build" => "0.3601",
     "Path::Class::Dir" => 0,
     "Test::Mojo" => 0,
     "Test::More" => 0,
     "YAML" => 0
   },
   "CONFIGURE_REQUIRES" => {
-    "ExtUtils::MakeMaker" => "6.30",
-    "Module::Build" => "0.3601"
+    "ExtUtils::MakeMaker" => "6.30"
   },
   "DISTNAME" => "PlugAuth-Plugin-WebUI",
   "EXE_FILES" => [],
@@ -37,7 +35,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.02",
+  "VERSION" => "0.03",
   "test" => {
     "TESTS" => "t/*.t"
   }
