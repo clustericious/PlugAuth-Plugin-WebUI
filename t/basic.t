@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use File::HomeDir::Test;
+use Test::Clustericious::Log;
 use File::HomeDir;
 use Test::More tests => 4;
 use Test::Mojo;
