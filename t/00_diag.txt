@@ -1,0 +1,11 @@
+Clustericious
+ExtUtils::MakeMaker
+File::HomeDir
+Path::Class
+PlugAuth
+PlugAuth::WebUI
+Role::Tiny
+Test::Mojo
+Test::More
+YAML
+YAML::XS
