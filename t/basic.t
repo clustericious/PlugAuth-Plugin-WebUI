@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+use 5.012;
 use Test::Clustericious::Log;
 use File::HomeDir;
 use Test::More tests => 4;

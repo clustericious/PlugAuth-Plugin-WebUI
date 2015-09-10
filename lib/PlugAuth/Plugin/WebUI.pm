@@ -2,7 +2,8 @@ package PlugAuth::Plugin::WebUI;
 
 use strict;
 use warnings;
-use v5.10;
+use 5.012;
+use experimental qw( switch );
 use PlugAuth::WebUI;
 use Role::Tiny::With;
 
@@ -51,7 +52,7 @@ sub init
     my($c) = @_;
     # FIXME: this comes out wrong when using an ssh tunnel.
     #        woraround was to set to '/' instead
-    $data->{plugauth_webui_data}->{api_url} = $c->url_for('index')->to_abs;
+    $data->{plugauth_webui_data}->{api_url} = $c->url_for('index')->to_abs->to_string;
     $data->{plugauth_webui_data}->{requires_authentic_credentials} = ($app->config->simple_auth(default => '') || $app->config->plug_auth(default => '')) ? 1 : 0;
     $c->stash($data);
     $c->render( template => 'plugauth_webui' );

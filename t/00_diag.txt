@@ -1,6 +1,7 @@
 Clustericious
 ExtUtils::MakeMaker
 File::HomeDir
+Mojolicious
 Path::Class
 PlugAuth
 PlugAuth::WebUI
@@ -9,3 +10,4 @@ Test::Mojo
 Test::More
 YAML
 YAML::XS
+experimental

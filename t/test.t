@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+use 5.012;
 use File::HomeDir::Test;
 use File::HomeDir;
 use Test::More tests => 2;
