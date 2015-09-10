@@ -2,6 +2,9 @@ Revision history for {{$dist->name}}
 
 {{$NEXT}}
 
+0.04      2015-09-10 11:22:03 -0400
+  - Compatability with (and require) Mojo 6.x
+
 0.03      2013-04-23 17:19:02 America/New_York
   - use MakeMaker instead of ModuleBuild
   - use [ACPS::RPM]
