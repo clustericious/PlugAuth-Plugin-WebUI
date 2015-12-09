@@ -1,0 +1,6 @@
+#!/bin/sh
+rm -rf /tmp/PlugAuth-WebUI && \
+git clone --depth 2 https://github.com/clustericious/PlugAuth-WebUI.git /tmp/PlugAuth-WebUI && \
+cd /tmp/PlugAuth-WebUI  && \
+dzil authordeps --missing | cpanm -n && \
+dzil install --install-command 'cpanm -n .'

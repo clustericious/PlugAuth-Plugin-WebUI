@@ -2,12 +2,9 @@ language: perl
 
 install:
   - perlbrew list
+  - sh corpus/install_webui
   - dzil authordeps --missing | cpanm -n
   - dzil listdeps --missing | cpanm -n
-  - git clone https://github.com/clustericious/PlugAuth-WebUI.git /tmp/PlugAuth-WebUI
-  - cd /tmp/PlugAuth-WebUI
-  - dzil authordeps --missing | cpanm -n
-  - dzil install --install-command 'cpanm -n .'
 
 perl:
   - "5.10"
