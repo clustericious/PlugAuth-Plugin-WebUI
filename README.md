@@ -1,4 +1,4 @@
-# PlugAuth::Plugin::WebUI
+# PlugAuth::Plugin::WebUI [![Build Status](https://secure.travis-ci.org/clustericious/PlugAuth-Plugin-WebUI.png)](http://travis-ci.org/clustericious/PlugAuth-Plugin-WebUI)
 
 Embed a web user interface into your PlugAuth server
 
@@ -26,7 +26,7 @@ which can be accessed via the url `/ui`.
 
 # AUTHOR
 
-Graham Ollis <gollis@sesda3>
+Graham Ollis &lt;gollis@sesda3>
 
 # COPYRIGHT AND LICENSE
 
