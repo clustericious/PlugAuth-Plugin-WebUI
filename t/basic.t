@@ -2,7 +2,7 @@ use strict;
 use warnings;
 use 5.010001;
 use Test::Clustericious::Log;
-use File::HomeDir;
+use File::Glob qw( bsd_glob );
 use Test::More tests => 4;
 use Test::Mojo;
 use Path::Class::Dir;
@@ -12,7 +12,7 @@ delete $ENV{HARNESS_ACTIVE};
 $ENV{LOG_LEVEL} = "TRACE";
 
 my $etc = Path::Class::Dir
-  ->new(File::HomeDir->my_home)
+  ->new(bsd_glob '~')
   ->subdir('etc');
 $etc->mkpath(0, 0700);
 

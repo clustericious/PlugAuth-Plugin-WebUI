@@ -12,7 +12,6 @@ my $post_diag;
 $modules{$_} = $_ for qw(
   Clustericious
   ExtUtils::MakeMaker
-  File::HomeDir
   Mojolicious
   Path::Class
   PlugAuth
