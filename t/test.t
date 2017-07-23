@@ -1,8 +1,9 @@
 use strict;
 use warnings;
 use 5.010001;
-use File::HomeDir::Test;
-use File::HomeDir;
+#use Test::Clustericious::Log;
+use Test2::Plugin::FauxHomeDir;
+use File::Glob qw( bsd_glob );
 use Test::More tests => 2;
 use Test::Mojo;
 use Path::Class::Dir;
@@ -12,8 +13,7 @@ delete $ENV{HARNESS_ACTIVE};
 $ENV{LOG_LEVEL} = "TRACE";
 
 my $etc = Path::Class::Dir
-  ->new(File::HomeDir->my_home)
-  ->subdir('etc');
+  ->new(bsd_glob '~/etc');
 $etc->mkpath(0, 0700);
 
 DumpFile($etc->file('PlugAuth.conf')->stringify, {

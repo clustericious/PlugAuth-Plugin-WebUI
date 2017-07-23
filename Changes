@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Removed dependency on File::HomeDir
 
 0.04      2015-09-10 11:22:03 -0400
   - Compatability with (and require) Mojo 6.x
